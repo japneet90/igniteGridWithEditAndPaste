@@ -2,6 +2,36 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
 
+## Steps to use 
+
+### 1. You can simply copy grid partial folder into your application.
+### 2. Update package.json with "igniteui-angular": "10.1.6". You may need to use different version according to your angular version compatibility.
+### 3. Update App.module with components in declarations:  "GridPartialComponent", "PasteHandler" and add module in imports: IgxGridModule
+```
+@NgModule({
+  declarations: [
+    AppComponent,
+    GridPartialComponent,
+    PasteHandler
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    IgxGridModule 
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+````
+### 4. Run command: npm install
+### 5. Just add following HTML in your component which is reusable:
+```
+<app-grid-partial [inputGridList]="gridList"[inputGridColumns]="gridColumns" 
+*ngIf="gridList?.length>0 && gridColumns?.length>0" [allowFilter]="true" [allowPaging]="true" [allowPasting]="true"  >
+</app-grid-partial>
+  ````
+### 6. Just run your application and you can edit the grid values and also copy from excel and paste in this grid and vice versa.
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
