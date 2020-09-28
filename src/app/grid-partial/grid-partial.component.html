@@ -1,0 +1,8 @@
+  
+  <div style="text-align: center;">
+    <igx-grid #grid1 [data]="inputGridList" width="600px" height="1000px" style="margin: auto" [allowFiltering]="allowFilter" 
+    [paging]="allowPaging" [autoGenerate]="false" paste-handler (onDataProcessed)="dataPasted($event)" [primaryKey]="'ID'">
+      <igx-column *ngFor="let column of inputGridColumns; let i=index" field="{{column.Header}}" 
+      header="{{column.HeaderText}}" dataType="string" [editable]="column.IsEditable" ></igx-column>
+    </igx-grid>
+  </div>
